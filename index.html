@@ -1,0 +1,15 @@
+---
+layout: default
+title: Home
+---
+<h1> Blog or something like that </h1>
+Welcome to my blog. This is my blog. Welcome.
+
+{% for post in site.posts %}
+<h2> <a href="{{ post.url }}"> {{ post.title}} </a> </h2>
+<em>Part of the series <q>{{ post.series }}</q> </em>
+
+{{ post.excerpt }}
+
+<a href="{{ post.url }}">More</a>
+{% endfor %}

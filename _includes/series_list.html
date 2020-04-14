@@ -1,0 +1,10 @@
+<ol class="ser_list">
+{%- assign filtered_posts = site.posts | where: 'series', page.series | reverse -%}
+{%- for pos in filtered_posts -%}
+<li>
+<a href="{{ pos.url }}" {%- if pos.url == page.url -%}class="inactive"{%- endif -%} >
+{{ pos.title }}
+</a>
+</li>
+{%- endfor -%}
+</ol>

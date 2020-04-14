@@ -1,0 +1,41 @@
+---
+layout: default
+---
+{%- assign next_post = nil -%}
+{%- assign prev_post = nil -%}
+{%- assign filtered_posts = site.posts | where: 'series', page.series -%}
+{%- assign has_reached = false -%}
+{%- for post in filtered_posts -%}
+	{%- if post.url == page.url -%}
+		{%- assign has_reached = true -%}
+	{%- elsif has_reached == true -%}
+		{%- assign prev_post = post -%}
+		{%- break -%}
+	{%- else -%}
+		{%- assign next_post = post -%}
+	{%- endif -%}
+{%- endfor -%}
+<div class="navdiv">
+{%- if has_reached == true and prev_post -%}
+<a class="a_button left_float" href="{{ prev_post.url }}"> ← prev </a>
+{% endif -%}
+{%- if has_reached == true and next_post -%}
+<a class="a_button right_float" href="{{ next_post.url }}"> next → </a>
+{%- endif -%}
+</div>
+<details>
+<summary>{{ page.series }}</summary>
+{% include series_list.html %}
+</details>
+<h1> {{ page.title }} </h1>
+
+{{ content }}
+
+<div class="navdiv">
+{%- if prev_post -%}
+<a class="a_button left_float" href="{{ prev_post.url }}"> ← prev </a>
+{%- endif -%}
+{%- if next_post -%}
+<a class="a_button right_float" href="{{ next_post.url }}"> next → </a>
+{%- endif -%}
+</div>

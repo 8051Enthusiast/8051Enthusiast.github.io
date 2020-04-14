@@ -1,0 +1,145 @@
+---
+---
+body {
+	@media (prefers-color-scheme: dark) {
+		color: #DDD;
+	}
+	color: #333;
+	margin: 0;
+	font-family: sans-serif;
+	background-color: #fff;
+	@media (prefers-color-scheme: dark) {
+		background-color: #1D2024;
+	}
+	min-height: 100%;
+}
+a {
+	text-decoration: none;
+	color: #66F;
+	@media (prefers-color-scheme: dark) {
+		color: #99F;
+	}
+	&.inactive {
+		color: #333;
+		@media (prefers-color-scheme: dark) {
+			color: #DDD;
+		}
+	}
+}
+img, video {
+	display: block;
+	padding: 2px;
+	margin: 5px auto;
+	border: 1px gray solid;
+	max-width: 90%;
+	box-sizing: border-box;
+}
+#topbar {
+	font-size: large;
+	background-color: #282830;
+	@media (prefers-color-scheme: dark) {
+		background-color: #111;
+	}
+	margin: 0;
+}
+.mainnav {
+	margin: 0;
+	padding: 0;
+	list-style-type: none;
+	height: 2em;
+	width: 80%;
+	max-width: 120em;
+	li {
+		float: left;
+		margin: auto 0;
+		padding: 0;
+		display: inline;
+		height: 2em;
+		a {
+			margin: 0;
+			padding: 0;
+			display: inline-block;
+			color: #CCC;
+			text-decoration: none;
+			text-align: center;
+			white-space: nowrap;
+			min-width: 8em;
+			vertical-align: middle;
+			height: 2em;
+			line-height: 2em;
+			&:hover {
+				background-color: #080808;
+				@media (prefers-color-scheme: dark) {
+					background-color: #000;
+				}
+			}
+			&.navact {
+				color: #111;
+				background-color: #EEE;
+				box-shadow: 0px 3px 3px grey;
+				@media (prefers-color-scheme: dark) {
+					color: #CCC;
+					background-color: #444;
+					box-shadow: 0px 3px 3px #000;
+				}
+			}
+		}
+	}
+}
+.contentcont {
+	width: 80%;
+	max-width: 120em;
+	margin: 0 auto;
+	padding: 20px;
+}
+.navdiv {
+	margin: 10px 10px;
+	width: 100%;
+	overflow: auto;
+}
+.a_button {
+	border: 1px #bbb solid;
+	border-radius: 3px;
+	margin: 1px;
+	padding: 3px 6px;
+	display: inline-block;
+	color: #000;
+	@media (prefers-color-scheme: dark) {
+		color: #CCC;
+	}
+	text-decoration: none;
+	text-align: center;
+	white-space: nowrap;
+	vertical-align: middle;
+	&:hover {
+		background-color: #ddd;
+		@media (prefers-color-scheme: dark) {
+			background-color: #111;
+		}
+	}
+}
+.left_float {
+	float: left;
+}
+.right_float {
+	float: right;
+}
+pre {
+	overflow-x: auto;
+}
+table {
+	display: block;
+	overflow-x: auto;
+//	white-space: nowrap;
+}
+th, td {
+	padding: 1px 1em 1px 0em;
+	&:last-child {
+		padding-right: 0em;
+	}
+}
+ol.ser_list {
+	li {
+		list-style-type: lower-greek;
+	}
+}

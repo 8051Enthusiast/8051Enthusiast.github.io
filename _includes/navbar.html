@@ -1,0 +1,11 @@
+<nav id="topbar">
+	<ul class="mainnav">
+		{% for ent in site.data.navbar %}
+		<li>
+		<a href="{{ ent.link }}" class="{% if ent.link == page.url or page.layout == "post" and ent.name == "Blog" %}navact{% else %}navinact{% endif %}">
+			{{ ent.name }}
+		</a>
+		</li>
+		{% endfor %}
+	</ul>
+</nav>
