@@ -8,7 +8,7 @@ But most likely someone who abondons their blog after three entries and maybe ma
 
 ## Contact
 My e-mail is my usual username but on protonmail.com.
-You can probably also reach my on twitter (again by 8051Enthusiast).
+You can probably also reach me on twitter (again by 8051Enthusiast).
 
 Is this how contact information works?
 I hope so.
