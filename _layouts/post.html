@@ -3,7 +3,7 @@ layout: default
 ---
 {%- assign next_post = nil -%}
 {%- assign prev_post = nil -%}
-{%- assign filtered_posts = site.posts | where: 'series', page.series | where_exp: 'item', 'item.draft == nil or item.draft == false' -%}
+{%- assign filtered_posts = site.posts | where: 'series', page.series | where_exp: 'item', 'item.draft == nil' -%}
 {%- assign has_reached = false -%}
 {%- for post in filtered_posts -%}
 	{%- if post.url == page.url -%}

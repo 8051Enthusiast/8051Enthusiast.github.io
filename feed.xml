@@ -11,7 +11,7 @@ layout: null
  <lastBuildDate>{{ site.time | date_to_rfc822 }}</lastBuildDate>
  <generator>Jekyll v{{ jekyll.version }}</generator>
 
- {%- assign filtered_posts = site.posts | where_exp: 'item', 'item.draft == nil or item.draft == false' -%}
+ {%- assign filtered_posts = site.posts | where_exp: 'item', 'item.draft == nil' -%}
  {%- for post in filtered_posts -%}
  <item>
   <title>{{ post.title | xml_escape }}</title>
