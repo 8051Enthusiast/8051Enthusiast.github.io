@@ -3,9 +3,10 @@ layout: default
 ---
 {%- assign next_post = nil -%}
 {%- assign prev_post = nil -%}
-{%- assign filtered_posts = site.posts | where: 'series', page.series | where_exp: 'item', 'item.draft == nil' -%}
+{%- assign filtered_posts = site.posts | where: 'series', page.series -%}
 {%- assign has_reached = false -%}
 {%- for post in filtered_posts -%}
+{%- unless post.draft -%}
 	{%- if post.url == page.url -%}
 		{%- assign has_reached = true -%}
 	{%- elsif has_reached == true -%}
@@ -14,6 +15,7 @@ layout: default
 	{%- else -%}
 		{%- assign next_post = post -%}
 	{%- endif -%}
+{%- endunless -%}
 {%- endfor -%}
 <div class="navdiv">
 {%- if has_reached == true and prev_post -%}

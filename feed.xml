@@ -11,8 +11,8 @@ layout: null
  <lastBuildDate>{{ site.time | date_to_rfc822 }}</lastBuildDate>
  <generator>Jekyll v{{ jekyll.version }}</generator>
 
- {%- assign filtered_posts = site.posts | where_exp: 'item', 'item.draft == nil' -%}
- {%- for post in filtered_posts -%}
+ {%- for post in site.posts -%}
+ {%- unless post.draft -%}
  <item>
   <title>{{ post.title | xml_escape }}</title>
   <description>{{ post.excerpt | xml_escape }}</description>
@@ -20,6 +20,7 @@ layout: null
   <guid isPermaLink="true">{{ site.url }}{{ site.baseurl }}{{ post.url }}</guid>
   <pubDate>Sun, 06 Sep 2009 16:20:00 +0000</pubDate>
  </item>
+ {%- endunless -%}
  {% endfor %}
 
 </channel>
