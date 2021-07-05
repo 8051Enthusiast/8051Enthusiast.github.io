@@ -1,0 +1,26 @@
+---
+layout: null
+---
+<?xml version="1.0" encoding="UTF-8" ?>
+<rss version="2.0">
+<channel>
+ <title>Blog of 8051Enthusiast</title>
+ <description>8051 reverse engineering</description>
+ <link>{{ site.url }}{{ site.baseurl }}/</link>
+ <pubDate>{{ site.time | date_to_rfc822 }}</pubDate>
+ <lastBuildDate>{{ site.time | date_to_rfc822 }}</lastBuildDate>
+ <generator>Jekyll v{{ jekyll.version }}</generator>
+
+ {%- assign filtered_posts = site.posts | where_exp: 'item', 'item.draft == nil or item.draft == false' -%}
+ {%- for post in filtered_posts -%}
+ <item>
+  <title>{{ post.title | xml_escape }}</title>
+  <description>{{ post.excerpt | xml_escape }}</description>
+  <link>{{ site.url }}{{ site.baseurl }}{{ post.url }}</link>
+  <guid isPermaLink="true">{{ site.url }}{{ site.baseurl }}{{ post.url }}</guid>
+  <pubDate>Sun, 06 Sep 2009 16:20:00 +0000</pubDate>
+ </item>
+ {% endfor %}
+
+</channel>
+</rss>
