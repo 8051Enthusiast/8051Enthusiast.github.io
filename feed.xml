@@ -18,7 +18,7 @@ layout: null
   <description>{{ post.excerpt | xml_escape }}</description>
   <link>{{ site.url }}{{ site.baseurl }}{{ post.url }}</link>
   <guid isPermaLink="true">{{ site.url }}{{ site.baseurl }}{{ post.url }}</guid>
-  <pubDate>Sun, 06 Sep 2009 16:20:00 +0000</pubDate>
+  <pubDate>{{ post.date | date_to_rfc822 }}</pubDate>
  </item>
  {%- endunless -%}
  {% endfor %}
