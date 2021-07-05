@@ -2,11 +2,16 @@
 layout: default
 title: Home
 ---
-<h1> Blog or something like that </h1>
-Welcome to my blog. This is my blog. Welcome.
+<h1> Blog </h1>
+Welcome to my blog. Here I post stuff, mostly about reverse engineering 8051 firmware and doing fun stuff with it.
 
-{% for post in site.posts %}
+{%- assign filtered_posts = site.posts | where_exp: 'item', 'item.draft == nil or item.draft == false' -%}
+{% for post in filtered_posts %}
 <h2> <a href="{{ post.url }}"> {{ post.title}} </a> </h2>
+<time datetime="{{ post.date | date_to_xmlschema }}">
+	{{ post.date | date_to_string }}
+</time>
+&mdash;
 <em>Part of the series <q>{{ post.series }}</q> </em>
 
 {{ post.excerpt }}
