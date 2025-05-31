@@ -1,0 +1,28 @@
+---
+layout: default
+title: Delsum
+---
+<h1>Delsum</h1>
+<p>
+  Delsum is a reverse engineering tool for checksums.
+</p>
+<p>
+  It can do a few things (changable in the "Options" section):
+  <ul>
+    <li>Reverse: You can add some files and their checksums under the "Files" sections, and delsum will attempt to find all checksum algorithms that fit the patterns specified under the "Models" tab.</li>
+    <li>Part: You can add some files and for each a checksum under the "Files" section, and some checksum algorithms under the "Models" section and get all common file ranges for the files that have the respective checksum.</li>
+    <li>Checksum: You can get a table that just gives the checksum for each file and checksum algorithm combination.</li>
+  </ul>
+</p>
+<p>
+  A more thorough explanation is available in the <a href="https://github.com/8051Enthusiast/delsum/blob/main/README.md"/>project README</a>.
+</p>
+<div id="app"></div>
+<noscript><p>It seems like you don't have Javascript, but you seem like the sort of person that would enjoy the CLI version at <a href="https://github.com/8051enthusiast/delsum">https://github.com/8051enthusiast/delsum</a>.</p></noscript>
+<link rel="stylesheet" type="text/css" href="/assets/apps/delsum/delsum.css" />
+<script type="module" src="/assets/apps/delsum/delsum.js"></script>
+<footer>
+	The source code of delsum and its build instructions can be obtained <a href="https://github.com/8051enthusiast/delsum">here</a>.
+	The <a href="https://gitlab.inria.fr/gf2x/gf2x">gf2x</a> library used in delsum is written by Richard Brent, Pierrick Gaudry, Emmanuel Thomé and Paul Zimmermann and licensed under the <a href="https://gitlab.inria.fr/gf2x/gf2x/-/blob/1c4974a44bc69a5a5111b44871d96c0cc16c0144/COPYING">GPLv3</a>.
+	The licenses for other dependencies can be found <a href="/assets/apps/delsum/licenses.txt">here</a>.
+</footer>
